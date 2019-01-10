@@ -22,15 +22,15 @@ router.get("/", function (req, res) {
 // Post new burger to database and refresh page to see it
 router.post("/", function(req, res) {
   console.log('Is this called?')
-    //burger.create([
-      //"burger_name", "devoured"
-    //], [
-      //req.body.burger_name, 0
-    //], function(result) {
+    burger.create([
+      "burger_name", "devoured"
+    ], [
+      req.body.burger_name, 0
+    ], function(result) {
       // Send back the ID of the new quote
-      // res.json({ id: result.insertId });
-      //res.redirect(req.get('referer'));
-    //});
+      res.json({ id: result.insertId });
+      // res.redirect(req.get('referer'));
+    });
   });
 
   // Mark burger as devoured in database
